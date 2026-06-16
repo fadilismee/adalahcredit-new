@@ -1,0 +1,8 @@
+User-agent: *
+Allow: /
+Disallow: /dashboard
+Disallow: /admin
+Disallow: /receipt
+Disallow: /onboarding
+
+Sitemap: https://adalahcredit.com/sitemap.xml

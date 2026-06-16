@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="id" class="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/png" href="/favicon.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1" />
+    <title>AdalahCredit — Unified AI API Gateway | 300+ Model, Satu API Key</title>
+    <meta name="description" content="AdalahCredit adalah API gateway AI terpadu. Akses 300+ model AI dari OpenAI, Anthropic, Google, Meta, Mistral, xAI, DeepSeek & Cohere dengan satu API key dan endpoint." />
+    <meta name="keywords" content="AI API gateway, OpenAI API, Anthropic API, Gemini API, unified AI, API key, LLM proxy, adalahcredit" />
+    <meta name="author" content="AdalahCredit" />
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href="https://adalahcredit.com" />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="AdalahCredit — Unified AI API Gateway" />
+    <meta property="og:description" content="Akses 300+ model AI dari semua provider besar dengan satu API key. Routing cerdas, failover otomatis, billing terpadu." />
+    <meta property="og:url" content="https://adalahcredit.com" />
+    <meta property="og:site_name" content="AdalahCredit" />
+    <meta property="og:image" content="https://adalahcredit.com/images/og-cover.png" />
+    <meta property="og:locale" content="id_ID" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="AdalahCredit — Unified AI API Gateway" />
+    <meta name="twitter:description" content="300+ AI models, satu API key. Smart routing, auto-failover, pay-per-token." />
+    <meta name="twitter:image" content="https://adalahcredit.com/images/og-cover.png" />
+
+    <!-- Theme -->
+    <meta name="theme-color" content="#09090b" />
+
+    <!-- PWA -->
+    <link rel="manifest" href="/manifest.json" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="apple-mobile-web-app-title" content="AdalahCredit" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png" />
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+    <script>
+      if ('serviceWorker' in navigator) {
+        window.addEventListener('load', () => {
+          navigator.serviceWorker.register('/sw.js').catch(() => {});
+        });
+      }
+    </script>
+  </body>
+</html>

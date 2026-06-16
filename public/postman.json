@@ -1,0 +1,82 @@
+{
+  "info": {
+    "name": "AdalahCredit API",
+    "description": "Unified API gateway for 8+ AI providers. Drop-in replacement for OpenAI.",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "auth": {
+    "type": "bearer",
+    "bearer": [{ "key": "token", "value": "{{api_key}}", "type": "string" }]
+  },
+  "variable": [
+    { "key": "base_url", "value": "https://blessed-sardine-879.convex.site" },
+    { "key": "api_key", "value": "sk-ac-YOUR_KEY_HERE" }
+  ],
+  "item": [
+    {
+      "name": "Chat Completions",
+      "item": [
+        {
+          "name": "Create Chat Completion",
+          "request": {
+            "method": "POST",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "url": { "raw": "{{base_url}}/v1/chat/completions", "host": ["{{base_url}}"], "path": ["v1", "chat", "completions"] },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"model\": \"gpt-4o-mini\",\n  \"messages\": [\n    {\"role\": \"system\", \"content\": \"You are a helpful assistant.\"},\n    {\"role\": \"user\", \"content\": \"Hello!\"}\n  ],\n  \"temperature\": 0.7,\n  \"max_tokens\": 1000\n}"
+            }
+          }
+        },
+        {
+          "name": "Stream Chat Completion",
+          "request": {
+            "method": "POST",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "url": { "raw": "{{base_url}}/v1/chat/completions", "host": ["{{base_url}}"], "path": ["v1", "chat", "completions"] },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"model\": \"gpt-4o-mini\",\n  \"messages\": [\n    {\"role\": \"user\", \"content\": \"Explain quantum computing in simple terms.\"}\n  ],\n  \"stream\": true\n}"
+            }
+          }
+        },
+        {
+          "name": "Chat with Claude",
+          "request": {
+            "method": "POST",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "url": { "raw": "{{base_url}}/v1/chat/completions", "host": ["{{base_url}}"], "path": ["v1", "chat", "completions"] },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"model\": \"claude-sonnet-4\",\n  \"messages\": [\n    {\"role\": \"user\", \"content\": \"Write a haiku about programming.\"}\n  ]\n}"
+            }
+          }
+        },
+        {
+          "name": "Chat with Gemini",
+          "request": {
+            "method": "POST",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "url": { "raw": "{{base_url}}/v1/chat/completions", "host": ["{{base_url}}"], "path": ["v1", "chat", "completions"] },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"model\": \"gemini-2.5-flash\",\n  \"messages\": [\n    {\"role\": \"user\", \"content\": \"What are the latest AI trends?\"}\n  ]\n}"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Models",
+      "item": [
+        {
+          "name": "List Available Models",
+          "request": {
+            "method": "GET",
+            "url": { "raw": "{{base_url}}/v1/models", "host": ["{{base_url}}"], "path": ["v1", "models"] }
+          }
+        }
+      ]
+    }
+  ]
+}
